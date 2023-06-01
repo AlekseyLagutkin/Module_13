@@ -16,18 +16,18 @@ graph::graph()
 
 	countv = 0;
 }
-void graph::addvertex(const char* name)   //Добавление пользователя
+void graph::addvertex(const char* name)   //Р”РѕР±Р°РІР»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 {
 	vertexes[countv].name = name;
 	vertexes[countv].ver = countv;
 	++countv;
 }
-void graph::addedge(int v1, int v2)   //Добавление ребра
+void graph::addedge(int v1, int v2)   //Р”РѕР±Р°РІР»РµРЅРёРµ СЂРµР±СЂР°
 {
 	matrix[v1][v2] = 1;
 	matrix[v2][v1] = 1;
 }
-void graph::outver()   //Вывод графа пользователей на экран
+void graph::outver()   //Р’С‹РІРѕРґ РіСЂР°С„Р° РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РЅР° СЌРєСЂР°РЅ
 {
 	int i;
 	for (i = 0; i < countv-1; ++i)
@@ -43,7 +43,7 @@ void graph::outver()   //Вывод графа пользователей на экран
 	}
 }
 
-bool graph::vertexist(int v)   //Проверка существования пользователя
+bool graph::vertexist(int v)   //РџСЂРѕРІРµСЂРєР° СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 {
 	if (vertexes[v].name !=0)
 		{
@@ -52,13 +52,13 @@ bool graph::vertexist(int v)   //Проверка существования пользователя
 		return false;
 	
 }
-bool graph::edgexist(int v1, int v2)   //Проверка существования ребра 
+bool graph::edgexist(int v1, int v2)   //РџСЂРѕРІРµСЂРєР° СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ СЂРµР±СЂР° 
 {
 	return matrix[v1][v2] != 0;
 }
-int graph::searchpairs()   //Поиск пар через три рукопожатий
+int graph::searchpairs()   //РџРѕРёСЃРє РїР°СЂ С‡РµСЂРµР· С‚СЂРё СЂСѓРєРѕРїРѕР¶Р°С‚РёР№
 {
-	int copairs = 0;   //Количество найденных пар
+	int copairs = 0;   //РљРѕР»РёС‡РµСЃС‚РІРѕ РЅР°Р№РґРµРЅРЅС‹С… РїР°СЂ
 	for (int i = 0; i < countv-1; ++i)
 	{
 		for (int j=0; j<3; ++j)
